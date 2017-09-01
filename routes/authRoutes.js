@@ -6,7 +6,7 @@ module.exports = (app) => {
     }));
     
     app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
-        res.send("KAPPA!");
+        res.send("KAPPA! " + req.connection.remoteAddress);
     });
 
     app.get('/api/logout', (req, res) => {
